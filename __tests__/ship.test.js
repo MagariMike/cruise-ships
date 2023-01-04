@@ -1,6 +1,7 @@
 const CruiseShip = require('../src/cruise-ships');
 const Port = require('../src/port');
-describe('constructor',() => { 
+
+describe('Ship',() => { 
     it('returns an object', () => {
         expect(new CruiseShip()).toBeInstanceOf(Object);
         
@@ -13,10 +14,10 @@ describe('constructor',() => {
 
     it('returns startingPort', () => { 
         const cruiseShip2 = new CruiseShip('Grimsby Cruise', 5, 'Grimsby');
-        expect(cruiseShip2.startingPort).toBe('Grimsby');
+        expect(cruiseShip2.currentPort).toBe('Grimsby');
     })
 
-describe('setSail', () => {
+    describe('setSail', () => {
         it('', () => { 
             let cruiseShip3 = new CruiseShip('Dave', 20, ''); 
             cruiseShip3.setSail();
@@ -28,8 +29,13 @@ describe('setSail', () => {
 
 
 
-describe('port', () => {
+describe('Port', () => {
     it('returns an object', () => { 
         expect(new Port).toBeInstanceOf(Object);
+    })
+
+    it('returns name', () => { 
+        const port1 = new Port('Grimsby');
+        expect(port1.name).toEqual('Grimsby');
     })
 })
