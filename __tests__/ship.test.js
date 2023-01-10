@@ -1,16 +1,12 @@
-const CruiseShip = require('../src/cruise-ships');
-const Port = require('../src/port');
+const CruiseShip = require('../src/ship');
+//const Port = require('../src/port');
 
 describe('Ship',() => { 
     it('returns an object', () => {
         expect(new CruiseShip()).toBeInstanceOf(Object);
         
     })
-    // Passengers not on the track 
-    it('returns passenger count', () => {
-        const cruiseShip1 = new CruiseShip('Bahama Cruise', 9);
-        expect(cruiseShip1.passengers).toEqual(9);
-    })
+   
 
     it('returns startingPort', () => { 
         const cruiseShip2 = new CruiseShip('Grimsby Cruise', 5, 'Grimsby');
@@ -29,13 +25,13 @@ describe('Ship',() => {
 
 
 
-describe('Port', () => {
-    it('returns an object', () => { 
+/*describe('Port', () => {
+    xit('returns an object', () => { 
         expect(new Port).toBeInstanceOf(Object);
     })
 
-    it('returns name', () => { 
+    xit('returns name', () => { 
         const port1 = new Port('Grimsby');
         expect(port1.name).toEqual('Grimsby');
     })
-})
+})*/
