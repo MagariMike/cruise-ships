@@ -1,5 +1,6 @@
 const CruiseShip = require('../src/ship');
-//const Port = require('../src/port');
+const port = require('../src/port');
+const Port = require('../src/port');
 
 describe('Ship',() => { 
     it('Can be instantiated', () => {
@@ -9,29 +10,29 @@ describe('Ship',() => {
     
     
     it('returns startingPort', () => { 
-        const cruiseShip2 = new CruiseShip('Grimsby Cruise', 'Grimsby');
-        expect(cruiseShip2.startingPort).toBe('Grimsby');
+        const cruiseShip2 = new CruiseShip('Grimsby Cruise', port);
+        expect(cruiseShip2.currentPort).toBe(port);
     })
 
     describe('setSail', () => {
         it('', () => { 
-            let cruiseShip3 = new CruiseShip('Dave', ''); 
+            let cruiseShip3 = new CruiseShip('Dave', port); 
             cruiseShip3.setSail();
-            // expect(cruiseShip3.setSail()).toEqaul(true) - With Wyconbe in the above 3rd field 
             expect(cruiseShip3.setSail()).toBeFalsy();
+        })
+    })
+
+    describe('dock', () => {
+        it('Can dock at a different port' , () => {
+            const dover = new Port('dover');
+            const ship = new CruiseShip('ship');
+
+            const calais = new Port('Calais');
+            CruiseShip.dock(calais);
+            expect(ship.currentPort).toEqual(calais)
         })
     })
 }) 
 
 
 
-/*describe('Port', () => {
-    xit('returns an object', () => { 
-        expect(new Port).toBeInstanceOf(Object);
-    })
-
-    xit('returns name', () => { 
-        const port1 = new Port('Grimsby');
-        expect(port1.name).toEqual('Grimsby');
-    })
-})*/
