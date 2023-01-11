@@ -25,10 +25,10 @@ describe('Ship',() => {
     describe('dock', () => {
         it('Can dock at a different port' , () => {
             const dover = new Port('dover');
-            const ship = new CruiseShip('ship');
+            const ship = new CruiseShip('ship', Port);
 
             const calais = new Port('Calais');
-            CruiseShip.dock(calais);
+            ship.dock(calais);
             expect(ship.currentPort).toEqual(calais)
         })
     })
