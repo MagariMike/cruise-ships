@@ -7,8 +7,10 @@ describe('Itinerary', () => {
     })
 
     it('has a ports property', () => {
-        const testItinerary = new Itinerary('test');
-        expect(testItinerary.ports).toEqual('test');
+        const dover = new Port('Worthing');
+        const calais = new Port('Calais');
+        const itinerary = new Itinerary([dover,calais]);
+        expect(itinerary.ports).toEqual([dover,calais]);
     })
 })
 
