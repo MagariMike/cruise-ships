@@ -14,9 +14,12 @@ class Ship {
     
     
     dock() { 
-        this.currentPort = itinerary.findIndex(this.previousPort)+1;
-        this.currentPort = 
-     } 
+
+        const nextPort = itinerary.ports.indexOf(this.previousPort);
+
+        this.currentPort = itinerary.ports[nextPort +1];
+        
+     };
    
        
 }
