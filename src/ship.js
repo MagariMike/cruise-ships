@@ -6,7 +6,7 @@ class Ship {
         
     }
     setSail() {
-       
+        
         this.previousPort = this.currentPort; 
         this.currentPort = null
 
@@ -15,10 +15,13 @@ class Ship {
     
     dock() { 
 
-        const nextPort = itinerary.ports.indexOf(this.previousPort);
-
-        this.currentPort = itinerary.ports[nextPort +1];
+        const itinerary = this.itinerary;
+        const previousPortIndex = itinerary.ports.indexOf(this.previousPort);
         
+        console.log(previousPortIndex);
+        
+        this.currentPort = itinerary.ports[previousPortIndex +1];
+        // console.log(this.currentPort);
      };
    
        
