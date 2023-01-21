@@ -12,6 +12,9 @@ addShip(ship) {
 };
 
 
+removeShip(ship) {
+    this.ships.pop(ship);
+}
 
 };
 

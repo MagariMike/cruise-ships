@@ -20,4 +20,11 @@ describe('Port', () => {
         expect(port.ships).toEqual([ship])
     
     })
+
+    it('Can remove a ship', () => {
+        const ship = {};
+        const port = new Port('dover',[ship]);
+        port.removeShip(ship);
+        expect(port.ships).toEqual([]);
+    })
 })
