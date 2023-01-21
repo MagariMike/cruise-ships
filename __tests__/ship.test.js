@@ -34,7 +34,7 @@ describe('Ship',() => {
             const ship = new Ship(itinerary); 
             ship.setSail();
             expect(ship.currentPort).toBeFalsy();
-            
+            expect(dover.ships).not.toContain(ship);
             
         })
         
@@ -62,7 +62,18 @@ describe('Ship',() => {
             ship.setSail();
             ship.dock();
             expect(ship.currentPort).toEqual(calais);
+            expect(calais.ships).toContain(ship);
 
+        })
+    })
+
+
+    describe('Gets added to a port on instantiation', () => {
+        it('Gets added to a port on instantiation', () => {
+            const dover = new Port('dover', []);
+            const itinerary = new Itinerary([dover]);
+            const ship = new Ship(itinerary); 
+            expect(dover.ships[0]).toEqual(ship);
 
         })
     })

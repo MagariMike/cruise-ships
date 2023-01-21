@@ -1,7 +1,7 @@
 class Port {
-    constructor(name,ships){
+    constructor(name){
         this.name = name
-        this.ships = ships
+        this.ships = []
     }
 
 
